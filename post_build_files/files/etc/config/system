@@ -1,0 +1,44 @@
+
+config system
+	option hostname 'Lexy-BPI-R4'
+	option timezone 'UTC'
+	option ttylogin '0'
+	option log_size '128'
+	option urandom_seed '0'
+
+config timeserver 'ntp'
+	option enabled '1'
+	option enable_server '0'
+	list server '0.openwrt.pool.ntp.org'
+	list server '1.openwrt.pool.ntp.org'
+	list server '2.openwrt.pool.ntp.org'
+	list server '3.openwrt.pool.ntp.org'
+
+config led 'led_wan'
+	option name 'wan'
+	option sysfs 'mt7530-0:00:green:lan'
+	option trigger 'netdev'
+	option mode 'link tx rx'
+	option dev 'wan'
+
+config led 'led_lan1'
+	option name 'lan1'
+	option sysfs 'mt7530-0:01:green:lan'
+	option trigger 'netdev'
+	option mode 'link tx rx'
+	option dev 'lan1'
+
+config led 'led_lan2'
+	option name 'lan2'
+	option sysfs 'mt7530-0:02:green:lan'
+	option trigger 'netdev'
+	option mode 'link tx rx'
+	option dev 'lan2'
+
+config led 'led_lan3'
+	option name 'lan3'
+	option sysfs 'mt7530-0:03:green:lan'
+	option trigger 'netdev'
+	option mode 'link tx rx'
+	option dev 'lan3'
+
